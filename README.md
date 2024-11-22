@@ -1,2 +1,3 @@
-# dotfiles
-My dotfiles, or thereabout
+# My dotfiles, or thereabout
+
+Have fun with these :)
