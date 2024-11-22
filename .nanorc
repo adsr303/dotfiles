@@ -1,0 +1,20 @@
+set positionlog
+set tabsize 4
+
+extendsyntax go formatter goimports -w
+extendsyntax go linter golangci-lint run
+extendsyntax go color lightred "\\([abfnrtv\\""']|[0-7]{3}|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
+extendsyntax go color red start="`" end="`"
+extendsyntax go color lightred "%[-+# 0-9.]*[bcdfgoqsUvwxX]"
+
+extendsyntax sh tabgives "  "
+extendsyntax sh formatter shfmt -w -i 2 -ci
+extendsyntax sh linter checkbashisms -l
+
+extendsyntax python tabgives "    "
+extendsyntax python formatter black
+extendsyntax python linter pylint --exit-zero
+
+extendsyntax perl tabgives "    "
+extendsyntax perl formatter perltidy -b -bext=/
+extendsyntax perl linter perlcritic --verbose %f:%l:%c:\x20%m\n
