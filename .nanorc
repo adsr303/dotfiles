@@ -10,6 +10,7 @@ extendsyntax go color lightred "%[-+# 0-9.]*[bcdfgoqsUvwxX]"
 extendsyntax sh tabgives "  "
 extendsyntax sh formatter shfmt -w -i 2 -ci
 extendsyntax sh linter checkbashisms -l
+extendsyntax sh color yellow start="<<-?'?EOF'?" end="^EOF$"
 
 extendsyntax python tabgives "    "
 extendsyntax python formatter black
