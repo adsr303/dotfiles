@@ -21,6 +21,8 @@ nmap <A-Right> :bnext<CR>
 autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>d <Plug>(go-doc)
+autocmd FileType go nmap <Leader>e <Plug>(go-alternate-edit)
 autocmd FileType go nmap <Leader>l <Plug>(go-lint)
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
