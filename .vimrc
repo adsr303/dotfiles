@@ -2,12 +2,11 @@ unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
 if has("gui_running")
-  " https://github.com/fatih/molokai
-  colorscheme molokai
   set guifont=JetBrains\ Mono\ 12
   " Get more screen real estate
   set guioptions-=T
 endif
+colorscheme lunaperche
 
 set expandtab
 set shiftwidth=4
@@ -18,7 +17,7 @@ nmap <A-Left>  :bprev<CR>
 nmap <A-Right> :bnext<CR>
 
 " https://github.com/fatih/vim-go/wiki/Tutorial
-autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
+autocmd FileType go,gomod,godoc setlocal noexpandtab shiftwidth=4 tabstop=4
 
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <Leader>d <Plug>(go-doc)
