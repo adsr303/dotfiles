@@ -1,6 +1,10 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+" In case of using https://github.com/Alligator/accent.vim
+let g:accent_colour = 'blue'
+let g:accent_no_bg = 1
+
 if has("gui_running")
   set guifont=JetBrains\ Mono\ 12
   " Get more screen real estate
