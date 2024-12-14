@@ -9,7 +9,10 @@ if has("gui_running")
   set guifont=JetBrains\ Mono\ 12
   " Get more screen real estate
   set guioptions-=T
+  set background=dark
+  let g:accent_no_bg = 0
 endif
+
 colorscheme lunaperche
 
 set expandtab
