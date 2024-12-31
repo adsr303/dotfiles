@@ -13,7 +13,9 @@ if has("gui_running")
   let g:accent_no_bg = 0
 endif
 
-colorscheme lunaperche
+colorscheme default
+" https://vi.stackexchange.com/a/11832
+highlight Visual cterm=reverse ctermbg=NONE
 
 set expandtab
 set shiftwidth=4
@@ -42,7 +44,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
