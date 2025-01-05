@@ -1,6 +1,9 @@
 set positionlog
 set tabsize 4
 
+bind M-1 formatter main
+bind M-2 linter main
+
 extendsyntax go formatter goimports -w
 extendsyntax go linter golangci-lint run
 extendsyntax go color lightred "\\([abfnrtv\\""']|[0-7]{3}|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})"
