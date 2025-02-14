@@ -17,7 +17,7 @@ colorscheme sorbet
 " https://vi.stackexchange.com/a/11832
 highlight Visual cterm=reverse ctermbg=NONE
 " https://stackoverflow.com/a/1117532/1354742
-highlight Normal ctermbg=0
+highlight Normal ctermbg=NONE
 
 set expandtab
 set shiftwidth=4
@@ -41,7 +41,7 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
 let g:go_addtags_transform = "camelcase"
 
-let g:go_auto_sameids = 0
+let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
 
 let g:go_highlight_types = 1
