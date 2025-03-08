@@ -1,6 +1,8 @@
 set positionlog
 set tabsize 4
 
+set autoindent
+
 bind M-1 formatter main
 bind M-2 linter main
 
