@@ -75,19 +75,23 @@ function! s:ShLint() abort
   endif
 
   let l:filename = shellescape(expand('%:p'))
+  let l:qf = []
 
-  if !executable('shellcheck')
+  " Run shellcheck if available
+  if executable('shellcheck')
+    let l:qf += systemlist('shellcheck --format=gcc ' . l:filename)
+  else
     echohl WarningMsg | echo "shellcheck not found" | echohl None
-    return
   endif
 
-  if !executable('checkbashisms')
+  " Run checkbashisms if available
+  if executable('checkbashisms')
+    let l:qf += systemlist('checkbashisms -l ' . l:filename)
+  else
     echohl WarningMsg | echo "checkbashisms not found" | echohl None
-    return
   endif
 
-  let l:cmd = 'shellcheck -f gcc ' . l:filename . '; checkbashisms -l ' . l:filename
-  cexpr system(l:cmd)
+  call setqflist([], 'r', { 'lines': l:qf, 'efm': '%f:%l:%c: %m', 'title': 'shellcheck + checkbashisms' })
   cwindow
 endfunction
 
