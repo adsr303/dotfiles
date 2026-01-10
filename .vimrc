@@ -44,6 +44,8 @@ let g:go_addtags_transform = "camelcase"
 
 let g:go_auto_type_info = 1
 
+let g:go_highlight_functions = 1
+
 " Errors list
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
