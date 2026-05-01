@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = 'lua',
   command = 'setlocal expandtab shiftwidth=2 tabstop=2'
 })
+
+-- Autoformatting
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.go',
+  callback = function()
+    vim.lsp.buf.format()
+  end
+})
