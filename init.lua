@@ -31,3 +31,14 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.lsp.buf.format()
   end
 })
+
+-- Restore last cursor position when reopening a file
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"') -- last-position mark
+    local lnum, col = mark[1], mark[2]
+    if lnum > 0 and lnum <= vim.api.nvim_buf_line_count(0) then
+      pcall(vim.api.nvim_win_set_cursor, 0, {lnum, col})
+    end
+  end,
+})
