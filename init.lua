@@ -1,7 +1,6 @@
---[[
+vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-]]
 
 vim.keymap.set('n', '<A-Left>', ':bprev<CR>')
 vim.keymap.set('n', '<A-Right>', ':bnext<CR>')
@@ -9,7 +8,11 @@ vim.keymap.set('n', '<A-Right>', ':bnext<CR>')
 -- Go
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'go', 'gomod', 'godoc' },
-  command = 'setlocal noexpandtab shiftwidth=4 tabstop=4'
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end
 })
 vim.lsp.config['go'] = {
   cmd = { 'gopls' },
@@ -21,7 +24,11 @@ vim.lsp.enable('go')
 -- Lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'lua',
-  command = 'setlocal expandtab shiftwidth=2 tabstop=2'
+  callback = function()
+    vim.bo.expandtab = true
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+  end
 })
 
 -- Autoformatting
