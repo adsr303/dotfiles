@@ -49,3 +49,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
+-- Plugins
+vim.pack.add({
+  -- Color schemes
+  'https://github.com/ayu-theme/ayu-vim',
+--[[
+  'https://github.com/omacom-io/lumon.nvim',
+]]
+})
+-- :lua vim.pack.del(vim.iter(vim.pack.get()):map(function(x) return x.spec.name end):totable())
+
+vim.cmd.colorscheme("ayu")
