@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 vim.lsp.config['go'] = {
   cmd = { 'gopls' },
-  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  filetypes = { 'go', 'gomod', 'gowork' },
   rootmarkers = { 'go.mod' }
 }
 vim.lsp.enable('go')
@@ -28,6 +28,20 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.expandtab = true
     vim.bo.shiftwidth = 2
     vim.bo.tabstop = 2
+  end
+})
+
+-- C/C++
+vim.lsp.config['c'] = {
+  cmd = { 'clangd' },
+  filetypes = { 'c', 'cpp' },
+  rootmarkers = { 'Makefile' }
+}
+vim.lsp.enable('c')
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp' },
+  callback = function()
+    vim.bo.cino = ':0'
   end
 })
 
@@ -54,9 +68,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.pack.add({
   -- Color schemes
   'https://github.com/ayu-theme/ayu-vim',
---[[
-  'https://github.com/omacom-io/lumon.nvim',
-]]
 })
 -- :lua vim.pack.del(vim.iter(vim.pack.get()):map(function(x) return x.spec.name end):totable())
 
