@@ -45,9 +45,25 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
+-- Python
+vim.lsp.config['python'] = {
+  cmd = { 'pylsp' },
+  filetypes = { 'python' },
+  rootmarkers = { 'requirements.txt' },
+  settings = {
+    pylsp = {
+      plugins = {
+        black = { enabled = true },
+        isort = { enabled = true }
+      }
+    }
+  }
+}
+vim.lsp.enable('python')
+
 -- Autoformatting
 vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.go',
+  pattern = { '*.go', '*.py' },
   callback = function()
     vim.lsp.buf.format()
   end
