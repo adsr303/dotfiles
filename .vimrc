@@ -13,11 +13,13 @@ if has("gui_running")
   let g:accent_no_bg = 0
 endif
 
-colorscheme sorbet
+"colorscheme darkblue
+set termguicolors
+set background=dark
 " https://vi.stackexchange.com/a/11832
 highlight Visual cterm=reverse ctermbg=NONE
 " https://stackoverflow.com/a/1117532/1354742
-highlight Normal ctermbg=NONE
+"highlight Normal ctermbg=NONE
 
 set expandtab
 set shiftwidth=4

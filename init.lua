@@ -1,19 +1,9 @@
-vim.opt.expandtab = true
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
 
 vim.keymap.set('n', '<A-Left>', ':bprev<CR>')
 vim.keymap.set('n', '<A-Right>', ':bnext<CR>')
 
 -- Go
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'go', 'gomod', 'godoc' },
-  callback = function()
-    vim.bo.expandtab = false
-    vim.bo.shiftwidth = 4
-    vim.bo.tabstop = 4
-  end
-})
 vim.lsp.config['go'] = {
   cmd = { 'gopls' },
   filetypes = { 'go', 'gomod', 'gowork' },
