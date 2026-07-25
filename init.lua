@@ -74,6 +74,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.pack.add({
   -- Color schemes
   'https://github.com/ayu-theme/ayu-vim',
+  'https://github.com/tjammer/blayu.vim',
+  'https://github.com/Alligator/accent.vim',
 })
 -- :lua vim.pack.del(vim.iter(vim.pack.get()):map(function(x) return x.spec.name end):totable())
 
