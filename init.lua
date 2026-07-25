@@ -76,6 +76,7 @@ vim.pack.add({
   'https://github.com/ayu-theme/ayu-vim',
   'https://github.com/tjammer/blayu.vim',
   'https://github.com/Alligator/accent.vim',
+  'https://github.com/jeffkreeftmeijer/vim-dim',
 })
 -- :lua vim.pack.del(vim.iter(vim.pack.get()):map(function(x) return x.spec.name end):totable())
 
