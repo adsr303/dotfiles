@@ -11,6 +11,19 @@ vim.lsp.config['go'] = {
 }
 vim.lsp.enable('go')
 
+vim.g.go_code_completion_enabled = 0
+vim.g.go_def_mapping_enabled = 0
+vim.g.go_auto_sameids = 0
+vim.g.go_textobj_enabled = 0
+vim.g.go_doc_keywordprg_enabled = 0
+
+vim.pack.add({
+  {
+    src = "https://github.com/fatih/vim-go",
+    version = "v1.29",
+  },
+})
+
 -- Lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'lua',
